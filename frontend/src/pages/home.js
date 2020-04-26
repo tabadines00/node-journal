@@ -3,21 +3,21 @@ import axios from 'axios'; // don't forget this
 import Notes from '../components/Notes';
 import { Redirect } from 'react-router-dom';
 
-const home = ({ appUser, setAppUser }) => {
+const Home = ({ appUser, setAppUser }) => {
   // pass in default value into useState
-  const [note, setNote] = React.useState(''); // create a state variable + setter
-  const [notes, setNotes] = React.useState(['Demo note']); // if map of undefined 
+  const [reflection, setReflection] = React.useState(''); // create a state variable + setter
+  const [reflections, setReflections] = React.useState(['Demo note']); // if map of undefined 
 
-  const fetchNotes = () => {
+  const fetchRefs = () => {
     // utility to get all notes
-    axios.get('/api/getAllNotes')
+    axios.get('/api/getAllReflections')
       .then((res) => {
         console.log(res);
-        setNotes(res.data.notes); // update state variable
+        setNotes(res.data.refs); // update state variable
       })
       .catch(console.log);
   };
-
+/*
   const submitNote = () => { // arrow/lambda function
     console.log(note);
     const body = {
@@ -29,10 +29,12 @@ const home = ({ appUser, setAppUser }) => {
       .catch(console.log);
   };
 
+  */
+
   // this is a hook
   React.useEffect(() => {
     // this will load notes when the page loads
-    fetchNotes();
+    fetchRefs();
   }, []); // pass empty array
 
   // jsx
@@ -54,4 +56,4 @@ const home = ({ appUser, setAppUser }) => {
   );
 };
 
-export default home;
+export default Home;

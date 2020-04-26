@@ -7,14 +7,14 @@ const path = require('path');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/api/getAllNotes', (req, res) => {
+app.get('/api/getAllReflections', (req, res) => {
 
     /*
     res.json(readData());
     */
 });
 
-app.post('/api/addNote', (req, res) => {
+app.post('/api/addReflection', (req, res) => {
 
     /*
     let body = req.body.body;
