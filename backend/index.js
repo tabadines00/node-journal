@@ -16,14 +16,15 @@ app.get('/api/getAllReflections', (req, res) => {
 
 app.post('/api/addReflection', (req, res) => {
 
-    /*
-    let body = req.body.body;
-    let tags = req.body.tags;
-    let links = req.body.links;
-
-    let newCard = createCard(body, tags, links);
-    updateData(newCard);
-    */
+    let userId = req.body.userId;
+    let date = req.body.date;
+    let pros = req.body.pros;
+    let cons = req.body.cons;
+    let refs = req.body.refs;
+    
+    let newRef = createReflection(userId, date, pros, cons, refs);
+    updateData(newRef);
+    
 });
 
 
@@ -40,14 +41,17 @@ app.listen(3000, () => console.log("==== Now listening on port 3000 ===="));
 
 // Helper Functions
 
-function createNote(body, tags, links) {
-    //Create a note and return it
-    let note = {
+function createReflection(userId, date, pros, cons, refs) {
+    //Create a reflection and return it
+    let ref = {
         //id: uuid4?
-        body: body,
-        tags: tags
+        userId: userId,
+        date: date,
+        pros: [...pros],
+        cons: [...cons],
+        refs: [...refs]
     }
-    return note;
+    return ref;
 }
 
 function readData() {
