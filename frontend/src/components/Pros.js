@@ -20,8 +20,7 @@ const Pros = () => { // step 2 declare component
     return(
         <div className="pros-container">
             <h2>Pros:</h2>
-            <TextList />
-            <button /* onClick={ submitNote } */>Add Note</button>
+            <TextList lines={lines} />
         </div>
     );
 };

@@ -5,8 +5,8 @@ import { Redirect } from 'react-router-dom';
 
 const Home = ({ appUser, setAppUser }) => {
   // pass in default value into useState
-  const [reflection, setReflection] = React.useState(''); // create a state variable + setter
-  const [reflections, setReflections] = React.useState(['Demo note']); // if map of undefined 
+  const [note, setNote] = React.useState(''); // create a state variable + setter
+  const [notes, setNotes] = React.useState(['Demo note']); // if map of undefined 
 
   const fetchRefs = () => {
     // utility to get all notes
@@ -17,7 +17,7 @@ const Home = ({ appUser, setAppUser }) => {
       })
       .catch(console.log);
   };
-/*
+
   const submitNote = () => { // arrow/lambda function
     console.log(note);
     const body = {
@@ -28,8 +28,6 @@ const Home = ({ appUser, setAppUser }) => {
       .then(() => fetchNotes()) // fetch after submit
       .catch(console.log);
   };
-
-  */
 
   // this is a hook
   React.useEffect(() => {

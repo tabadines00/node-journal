@@ -8,18 +8,8 @@ import Reflection from '../components/Reflection.js';
 
 const Home = ({ appUser, setAppUser }) => {
   // pass in default value into useState
-  const [note, setNote] = React.useState(''); // create a state variable + setter
-  const [notes, setNotes] = React.useState(['Demo note']); // if map of undefined 
-
-  const fetchNotes = () => {
-    // utility to get all notes
-    axios.get('/api/getAllNotes')
-      .then((res) => {
-        console.log(res);
-        setNotes(res.data.notes); // update state variable
-      })
-      .catch(console.log);
-  };
+  const [reflection, setReflection] = React.useState(''); // create a state variable + setter
+  const [reflections, setReflections] = React.useState(['Demo note']); // if map of undefined 
 
   const finish = () => { // arrow/lambda function
     console.log(note);
