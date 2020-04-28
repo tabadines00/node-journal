@@ -1,6 +1,22 @@
 # node-journal
 This app uses node.js and react to create a journaling program
 
+## Program Structure
+### React Component Tree:
+- App: Holds CurrentUser state
+    - Home: Shows all entries from Current User
+    - NewReflection: Manages Pro/Con/Refection States and API calls
+        - TextList: Receives state and sets state from input 
+    - Login: POSTs sanitized username/password
+    - Signup: POSTs sanitized new username/password
+    
+### Node/Express endpoints
+- /api
+    - /register (POST): user/pass are added to database if unique and safe
+    - /authenticate (POST): user/pass are checked against database
+    - /postEntry (POST): New entry is added to database with userId and date
+    - /allEntries (GET): All user entries are displayed to the CurrentUser
+
 ### Todos
 - Front End
     - Basic UI/UX
