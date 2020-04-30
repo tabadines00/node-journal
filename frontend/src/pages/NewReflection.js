@@ -1,24 +1,26 @@
 import React from 'react';
 import axios from 'axios'; // don't forget this
-import Notes from '../components/Notes';
-import { Redirect } from 'react-router-dom';
-import Pros from '../components/Pros.js';
-import Cons from '../components/Cons.js';
-import Reflection from '../components/Reflection.js';
+import TextList from '../components/TextList';
 
-const Home = ({ appUser, setAppUser }) => {
+const NewReflection = ({ appUser, setAppUser }) => {
   // pass in default value into useState
-  const [reflection, setReflection] = React.useState(''); // create a state variable + setter
-  const [reflections, setReflections] = React.useState(['Demo note']); // if map of undefined 
+  const [pros, setPros] = React.useState([]);
+  const [cons, setCons] = React.useState([]);
+  const [refs, setRefs] = React.useState(''); // create a state variable + setter
 
   const finish = () => { // arrow/lambda function
-    console.log(note);
+    console.log(pros);
+    console.log(cons);
+    console.log(refs);
     const body = {
-      note: note
+      pros: pros,
+      cons: cons,
+      refs: refs
     };
-    axios.post('/api/addNote', body)
-      .then(() => setNote(''))
-      .then(() => fetchNotes()) // fetch after submit
+    axios.post('/api/addEntry', body)
+      .then(() => setPros([])) // clear all states
+      .then(() => setCons([]))
+      .then(() => setRefs(''))
       .catch(console.log);
   };
 
@@ -28,9 +30,18 @@ const Home = ({ appUser, setAppUser }) => {
       <h1>Add A new Reflection</h1>
       <div>
         <div>
-          <Pros />
-          <Cons />
-          <Reflection />
+          <div className="pros-container">
+            <h2>Pros:</h2>
+            <TextList lines={pros} setLine={setPros} />
+          </div>
+          <div className="cons-container">
+            <h2>Cons:</h2>
+            <TextList lines={cons} setLine={setCons} />
+          </div>
+          <div className="reflection-container">
+            <h2>Reflection:</h2>
+            <textarea value={refs} onChange={e => setRefs(e.target.value)} />
+        </div>
         </div>
         <div>
           <button onClick={finish}>Finish</button>
@@ -40,4 +51,4 @@ const Home = ({ appUser, setAppUser }) => {
   );
 };
 
-export default Home;
+export default NewReflection;

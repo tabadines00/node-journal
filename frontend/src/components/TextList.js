@@ -1,7 +1,14 @@
 import React from 'react';  //step 1
 
-const TextList = ({ lines }) => { // step 2 declare component
+const TextList = ({ lines, setLine }) => { // step 2 declare component
     const [item, setItem] = React.useState('');
+
+    const submitItem = () => {
+        // Add the current item to the lines
+        lines.push(item);
+        console.log(item);
+        setItem('');
+    }
 
     return(
         <div>
