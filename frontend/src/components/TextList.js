@@ -13,9 +13,9 @@ const TextList = ({ lines, setLine }) => { // step 2 declare component
     return(
         <div>
             <ul>
-                { lines.map((line) => {
+                { lines.map((line, i) => {
                     return (
-                    <li className="line-item">{line}</li>
+                    <li className="line-item" key={line + i}>{line}</li>
                     );
                 })}
                 <li className="line-item">
