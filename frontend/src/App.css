@@ -34,20 +34,124 @@
   margin-bottom: 50px;
 }
 
-.notes{
-  width:600px;
-  display: flex;
-  margin: 0 auto;
-  margin-top: 40px;
-  flex-direction: column;
+body {
+  background-color: rgb(245, 245, 245);
 }
 
-.note-item{
-  border: 1px solid black;
-  flex-grow: 1;
-  display: flex;
+nav {
+  background-color: darkgray;
 }
 
-.note-content{
-  flex-grow: 2;
+nav a {
+  padding: 1em;
+  transition-duration: 0.3s;
+  color: lightgray;
+
+  display: inline-block;
+
+  background-color: darkgray;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: black;
+  background-color: lightgray;
+}
+
+.ref h1 {
+  margin-left: 1em;
+}
+
+.ref h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.pros-container {
+  margin-left: 1em;
+  margin-right: 1em;
+
+  margin-bottom: 1em;
+
+  padding: 1em;
+  padding-left: 2em;
+
+  border-radius: 5px;
+  background-color: rgb(157, 255, 157);
+  box-shadow: -6px 6px 16px #c1c1c1
+}
+
+.pros-container input {
+  border: none;
+  font-size: 1em;
+  background-color: rgb(157, 255, 157);
+}
+
+.cons-container {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+
+  padding: 1em;
+  padding-left: 2em;
+
+  border-radius: 5px;
+  background-color: rgb(255, 148, 148);
+  box-shadow: -6px 6px 16px #c1c1c1
+}
+
+.cons-container input {
+  border: none;
+  font-size: 1em;
+  background-color: rgb(255, 148, 148);
+}
+
+.reflection-container {
+  margin-left: 1em;
+  margin-right: 1em;
+
+  padding: 1em;
+  padding-left: 2em;
+
+  border-radius: 5px;
+  background-color: rgb(168, 255, 251);
+  box-shadow: -6px 6px 16px #c1c1c1
+}
+
+.line-item {
+  border-bottom: 2px;
+  border-color: black;
+}
+
+.finish-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  
+  font-weight: bold;
+  background-color: #cda1ff;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.add-button {
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 0.25em 1em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
 }

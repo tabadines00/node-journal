@@ -12,11 +12,13 @@ const NewReflection = ({ appUser, setAppUser }) => {
     console.log(pros);
     console.log(cons);
     console.log(refs);
+
     const body = {
       pros: pros,
       cons: cons,
       refs: refs
     };
+
     axios.post('/api/addEntry', body)
       .then(() => setPros([])) // clear all states
       .then(() => setCons([]))
@@ -26,8 +28,8 @@ const NewReflection = ({ appUser, setAppUser }) => {
 
   // jsx
   return (
-    <div>
-      <h1>Add A new Reflection</h1>
+    <div className="ref">
+      <h1>Add a new Reflection</h1>
       <div>
         <div>
           <div className="pros-container">
@@ -44,7 +46,7 @@ const NewReflection = ({ appUser, setAppUser }) => {
         </div>
         </div>
         <div>
-          <button onClick={finish}>Finish</button>
+          <button className="finish-button" onClick={finish}>Finish</button>
         </div>
       </div>
     </div>

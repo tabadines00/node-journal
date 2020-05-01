@@ -18,9 +18,9 @@ const TextList = ({ lines, setLine }) => { // step 2 declare component
                     <li className="line-item" key={line + i}>{line}</li>
                     );
                 })}
-                <li className="line-item">
+                <li className="line-item input-item">
                     <input value={item} onChange={e => setItem(e.target.value)} />
-                    <button onClick={submitItem}>Add</button>
+                    <button className="add-button" onClick={submitItem}>Add</button>
                 </li>
             </ul>
         </div>
