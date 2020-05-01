@@ -3,9 +3,11 @@ const app = express();
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
-const MongoClient = require('mongodb').MongoClient;
+const {MongoClient} = require('mongodb');
 
 var dbUrl = "mongodb://localhost:27017/";
+
+const client = new MongoClient(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -32,6 +34,7 @@ app.post('/api/addEntry', (req, res) => {
     let newRef = createReflection(userId, date, pros, cons, refs);
     updateData(newRef);
     
+    res.end();
 });
 
 
@@ -71,7 +74,7 @@ function readData() {
 
 function updateData(jsonData) {
 
-    MongoClient.connect(dbUrl, (err, db) => {
+    client.connect((err, db) => {
         if (err) throw err;
         var dbObject = db.db("reflectionDB");
 
