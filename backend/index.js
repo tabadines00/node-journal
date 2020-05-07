@@ -12,8 +12,12 @@ const client = new MongoClient(dbUrl, { useNewUrlParser: true, useUnifiedTopolog
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/api/getAllReflections', (req, res) => {
+app.get('/api/getAllEntries', (req, res) => {
 
+    let refs = [];
+    // refs will be updated with MongoDB
+
+    res.send(refs);
     /*
     res.json(readData());
     */
