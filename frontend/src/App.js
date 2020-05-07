@@ -14,6 +14,9 @@ const App = () => {
         <Link to="/addEntry">New</Link>
       </nav>
       <Switch>
+        <Route path="/myReflections">
+          <ViewReflections />
+        </Route>
         <Route path="/addEntry">
           <NewReflection />
         </Route>
