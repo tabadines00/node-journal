@@ -35,11 +35,11 @@
 }
 
 body {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(235, 235, 235);
 }
 
 nav {
-  background-color: darkgray;
+  background-color: #bf89fc;
 }
 
 nav a {
@@ -49,7 +49,7 @@ nav a {
 
   display: inline-block;
 
-  background-color: darkgray;
+  background-color: #bf89fc;
   border: none;
   color: white;
   text-align: center;
@@ -81,15 +81,17 @@ nav a:hover {
   padding: 1em;
   padding-left: 2em;
 
+  box-shadow: -6px 6px 16px #c1c1c1;
+
   border-radius: 5px;
-  background-color: rgb(157, 255, 157);
-  box-shadow: -6px 6px 16px #c1c1c1
+  background: rgb(82,255,141);
+  background: linear-gradient(40deg, rgb(64, 199, 109) 0%, rgb(127, 240, 174) 100%);
 }
 
 .pros-container input {
   border: none;
   font-size: 1em;
-  background-color: rgb(157, 255, 157);
+  background-color: white;
 }
 
 .cons-container {
@@ -100,15 +102,17 @@ nav a:hover {
   padding: 1em;
   padding-left: 2em;
 
+  box-shadow: -6px 6px 16px #c1c1c1;
+
   border-radius: 5px;
-  background-color: rgb(255, 148, 148);
-  box-shadow: -6px 6px 16px #c1c1c1
+  background: rgb(255,59,20);
+  background: linear-gradient(45deg, rgb(241, 107, 80) 0%, rgba(255,173,161,1) 100%);
 }
 
 .cons-container input {
   border: none;
   font-size: 1em;
-  background-color: rgb(255, 148, 148);
+  background-color: white;
 }
 
 .reflection-container {
@@ -118,14 +122,21 @@ nav a:hover {
   padding: 1em;
   padding-left: 2em;
 
+  box-shadow: -6px 6px 16px #c1c1c1;
+
   border-radius: 5px;
-  background-color: rgb(168, 255, 251);
-  box-shadow: -6px 6px 16px #c1c1c1
+  background: rgb(20,149,255);
+  background: linear-gradient(50deg, rgb(51, 163, 255) 0%, rgb(122, 253, 231) 100%);
 }
 
 .line-item {
-  border-bottom: 2px;
-  border-color: black;
+  width: 66%;
+  padding-bottom: 0.5em;
+  border-bottom: 3px dotted rgb(224, 224, 224);
+  margin-bottom: 0.5em;
+
+  font-size: 1em;
+  font-weight: 500;
 }
 
 .finish-button {
@@ -135,23 +146,55 @@ nav a:hover {
   margin-top: 1em;
   
   font-weight: bold;
-  background-color: #cda1ff;
+  background-color: #bf89fc;
   border: none;
   border-radius: 5px;
-  color: black;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.5em;
+
+  transition-duration: 0.4s;
+}
+
+.finish-button:hover {
+  box-shadow: -3px 6px 15px #727272;
 }
 
 .add-button {
   font-weight: bold;
   border: none;
-  border-radius: 5px;
-  color: black;
+  color: white;
   padding: 0.25em 1em;
   text-align: center;
   text-decoration: none;
   font-size: 1em;
+  background-color: rgb(187, 187, 187);
+}
+
+.input-item input {
+  padding: .25em;
+}
+
+.input-item {
+  border-bottom: none;
+}
+
+textarea {
+  border: none;
+  background-color: white;
+  font-size: 1em;
+}
+
+h1 {
+  color: black;
+}
+
+h2 {
+  color: white;
+}
+
+li {
+  color: white;
 }

@@ -3,6 +3,12 @@ import React from 'react';  //step 1
 const TextList = ({ lines, setLine }) => { // step 2 declare component
     const [item, setItem] = React.useState('');
 
+    const keyPressed = (event) => {
+        if (event.key === "Enter") {
+          submitItem();
+        }
+      }
+
     const submitItem = () => {
         // Add the current item to the lines
         lines.push(item);
@@ -19,7 +25,7 @@ const TextList = ({ lines, setLine }) => { // step 2 declare component
                     );
                 })}
                 <li className="line-item input-item">
-                    <input value={item} onChange={e => setItem(e.target.value)} />
+                    <input value={item} onKeyPress={keyPressed} onChange={e => setItem(e.target.value)} />
                     <button className="add-button" onClick={submitItem}>Add</button>
                 </li>
             </ul>

@@ -29,7 +29,7 @@ const NewReflection = ({ appUser, setAppUser }) => {
   // jsx
   return (
     <div className="ref">
-      <h1>Add a new Reflection</h1>
+      <h1>New Reflection</h1>
       <div>
         <div>
           <div className="pros-container">
